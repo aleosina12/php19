@@ -1,0 +1,33 @@
+---
+ip: "192.168.10.42"
+memory: 2048
+cpus: 2
+name: PHP Backend2
+provider: virtualbox
+
+
+
+folders:
+    - map: C:\dev\Skillfactory\Module19_Practice\Homestead\code
+      to: /home/vagrant/code
+
+sites:
+    - map: application.local
+      to: /home/vagrant/code/public
+
+databases:
+    - homestead
+
+features:
+    - mysql: false
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+
+ports:
+    - send: 80
+      to: 80
+    - send: 443
+      to: 4430
+    - send: 2242
+      to: 22
